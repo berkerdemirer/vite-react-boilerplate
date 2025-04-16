@@ -41,6 +41,14 @@ A modern React boilerplate powered by Vite, featuring authentication, API integr
 2. Copy and configure environment variables
 3. Run `pnpm dev` or `npm run dev`
 
+## Better-auth client setup
+
+This project automatically wires better-auth to your better-auth server instance. You need to provide the base api url of your server e.g `http://localhost:3000`. Depending on your server implementation, better-auth should match the correct routes.
+
+You can take a look at example better-auth server project with hono here
+
+https://github.com/berkerdemirer/hono-boilerplate
+
 ## License
 
 MIT
