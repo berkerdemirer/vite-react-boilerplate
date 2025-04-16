@@ -49,6 +49,12 @@ You can take a look at example better-auth server project with hono here
 
 https://github.com/berkerdemirer/hono-boilerplate
 
+## OpenAPI setup
+
+If your server provides an openAPI endpoint then you can update `generate-api` script inside of the `package.json` and point the url to your own openAPI endpoint. This command will automatically generate a `schema.d.ts` under `lib` so that you can develop your frontend as type safe as possible.
+
+Don't forget to update the api endpoint inside of the `lib/api-client.ts` as well.
+
 ## License
 
 MIT
