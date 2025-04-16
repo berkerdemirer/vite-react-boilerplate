@@ -1,13 +1,9 @@
 import { Link, Navigate } from 'react-router';
 import { LoginForm } from '@/components/form/signin-form';
-import { $api } from '@/lib/api-client';
 import { useSession } from '@/lib/auth';
 import { config } from '@/lib/config';
 
 export default function Signin() {
-  const { data: users } = $api.useQuery('get', '/users');
-
-  console.log(users);
   const { data } = useSession();
 
   if (data?.user) {

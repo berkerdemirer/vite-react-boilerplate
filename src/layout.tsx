@@ -1,5 +1,4 @@
-import { Trans } from 'react-i18next';
-import LocaleSwitcher from '@/components/locale-switch';
+import { Nav } from '@/components/nav';
 import useLocalizeDocumentAttributes from '@/hooks/use-localized-document-attributes';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -7,9 +6,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <LocaleSwitcher />
-      <Trans i18nKey="hello" values={{ name: 'John' }} />
-      {children}
+      <Nav />
+      <main>{children}</main>
     </>
   );
 }

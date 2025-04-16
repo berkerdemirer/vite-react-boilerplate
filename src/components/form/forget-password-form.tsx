@@ -4,8 +4,8 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { InputField } from '@/components/form/fields/input-fields';
 import { Form } from '@/components/form/form';
+import { InputField } from '@/components/form/input-field';
 import { Button } from '@/components/ui/button';
 import {
   Card,

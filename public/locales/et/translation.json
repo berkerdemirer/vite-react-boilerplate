@@ -1,4 +1,4 @@
 {
   "app_title": "Minu App",
-  "hello": "Tere, {{name}}!"
+  "welcome_message": "Tere tulemast!"
 }

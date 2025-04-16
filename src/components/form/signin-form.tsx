@@ -3,9 +3,10 @@ import { Loader2 } from 'lucide-react';
 import { z } from 'zod';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import { InputField } from '@/components/form/fields/input-fields';
 import { Form } from '@/components/form/form';
+import { InputField } from '@/components/form/input-field';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -28,6 +29,8 @@ const signInSchema = z.object({
 type SignInFormValues = z.infer<typeof signInSchema>;
 
 export function LoginForm() {
+  const { t } = useTranslation();
+
   const form = useForm<SignInFormValues>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -35,6 +38,7 @@ export function LoginForm() {
       password: '',
     },
   });
+
   const { fetchOptions, socialFetchOptions, loading, socialLoading } =
     useAuthFetchOptions({
       redirectTo: '/dashboard',
@@ -62,7 +66,7 @@ export function LoginForm() {
     <>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Welcome back</CardTitle>
+          <CardTitle className="text-xl">{t('welcome_message')}</CardTitle>
           <CardDescription>
             Login with your Apple or Google account
           </CardDescription>

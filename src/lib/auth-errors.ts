@@ -1,9 +1,9 @@
 import { createAuthClient } from 'better-auth/react';
 
-const authClient = createAuthClient();
+type AuthClient = ReturnType<typeof createAuthClient>;
 
 type ErrorTypes = {
-  [K in keyof typeof authClient.$ERROR_CODES]?: {
+  [K in keyof AuthClient['$ERROR_CODES']]?: {
     en: string;
     es: string;
   };

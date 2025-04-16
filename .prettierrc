@@ -5,10 +5,9 @@
   "singleQuote": true,
   "semi": true,
   "importOrder": [
-    "^(react|next)(.*)$",
-    "^next/(.*)$",
-    "^@/app/(.*)$",
+    "^(react)(.*)$",
     "^@/components/(.*)$",
+    "^@/routes/(.*)$",
     "^@/lib/(.*)$",
     "^@/hooks/(.*)$",
     "^@/styles/(.*)$",

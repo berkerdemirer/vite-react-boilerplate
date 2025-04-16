@@ -4,8 +4,8 @@ import { z } from 'zod';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router';
-import { InputField } from '@/components/form/fields/input-fields';
 import { Form } from '@/components/form/form';
+import { InputField } from '@/components/form/input-field';
 import { Button } from '@/components/ui/button';
 import {
   Card,

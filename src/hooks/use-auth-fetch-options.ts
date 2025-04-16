@@ -1,3 +1,4 @@
+import { BetterFetchOption } from 'better-auth/react';
 import { toast } from 'sonner';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -17,16 +18,16 @@ export function useAuthFetchOptions({
   const [socialLoading, setSocialLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const fetchOptions = {
+  const fetchOptions: BetterFetchOption = {
     onResponse: () => {
       setLoading(false);
     },
     onRequest: () => {
       setLoading(true);
     },
-    onError: (ctx: { error: { code: string; message: string } }) => {
-      const errorMessage = getAuthErrorMessage(ctx.error.code);
-      toast.error(errorMessage || ctx.error.message);
+    onError: (context) => {
+      const errorMessage = getAuthErrorMessage(context.error.code);
+      toast.error(errorMessage || context.error.message);
     },
     onSuccess: async () => {
       if (showSuccess) {
@@ -40,16 +41,16 @@ export function useAuthFetchOptions({
     },
   };
 
-  const socialFetchOptions = {
+  const socialFetchOptions: BetterFetchOption = {
     onResponse: () => {
       setSocialLoading(false);
     },
     onRequest: () => {
       setSocialLoading(true);
     },
-    onError: (ctx: { error: { code: string; message: string } }) => {
-      const errorMessage = getAuthErrorMessage(ctx.error.code);
-      toast.error(errorMessage || ctx.error.message);
+    onError: (context) => {
+      const errorMessage = getAuthErrorMessage(context.error.code);
+      toast.error(errorMessage || context.error.message);
     },
   };
 

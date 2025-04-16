@@ -1,12 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2 } from 'lucide-react';
-import { toast } from 'sonner';
 import { z } from 'zod';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router';
-import { InputField } from '@/components/form/fields/input-fields';
 import { Form } from '@/components/form/form';
+import { InputField } from '@/components/form/input-field';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -35,7 +33,6 @@ interface ResetPasswordFormProps {
 }
 
 export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
-  const navigate = useNavigate();
   const form = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -55,7 +52,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
         fetchOptions,
       });
     },
-    [token, navigate],
+    [token, fetchOptions],
   );
 
   return (
