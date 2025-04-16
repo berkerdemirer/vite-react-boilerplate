@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# Vite React Boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React boilerplate powered by Vite, featuring authentication, API integration, UI components, form handling, internationalization, testing, and code quality tools.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: UI library for building user interfaces.
+- **Vite**: Fast build tool and development server.
+- **react-router**: Routing for single-page applications.
+- **openAPI**: Type-safe API client generation and usage via `openapi-fetch` and `openapi-react-query`.
+- **better-auth**: Authentication client for sign in, sign up, password reset, and social login.
+- **shadcn/ui**: Accessible, customizable UI components (see `src/components/ui`).
+- **react-hook-form**: Form state management and validation (see `src/components/form`).
+- **i18next**: Internationalization and localization (see `src/i18n`).
+- **eslint**: Linting for code quality and consistency.
+- **prettier**: Code formatting.
+- **vitest**: Unit and component testing (see `src/test`).
+- **husky**: Git hooks for enforcing code quality on commit.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `src/components/ui/`: shadcn/ui components (Button, Card, Select, etc.)
+- `src/components/form/`: Forms using react-hook-form and zod validation
+- `src/lib/api-client.ts`: openAPI client setup
+- `src/lib/auth.ts`: better-auth client setup
+- `src/i18n/`: i18next configuration
+- `src/routes/`: App routes using react-router
+- `src/test/`: Example tests using vitest
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## Scripts
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- `dev`: Start development server
+- `build`: Build for production
+- `test`: Run tests with vitest
+- `lint`: Run eslint
+- `format`: Run prettier
 
-```js
-// eslint.config.js
-import reactDom from 'eslint-plugin-react-dom';
-import reactX from 'eslint-plugin-react-x';
+## Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+1. Install dependencies
+2. Copy and configure environment variables
+3. Run `pnpm dev` or `npm run dev`
+
+## License
+
+MIT
