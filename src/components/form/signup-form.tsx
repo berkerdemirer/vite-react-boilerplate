@@ -14,7 +14,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { signIn, signUp } from '@/lib/auth';
+import { sendVerificationEmail, signIn, signUp } from '@/lib/auth';
+import { ENV } from '@/lib/env';
 import { useAuthFetchOptions } from '@/hooks/use-auth-fetch-options';
 
 const signupSchema = z
@@ -57,10 +58,14 @@ export function SignupForm() {
         ...data,
         fetchOptions,
       });
+      await sendVerificationEmail({
+        email: data.email,
+        callbackURL: `${ENV.VITE_APP_URL}/dashboard`,
+        fetchOptions,
+      });
     },
     [fetchOptions],
   );
-
   const onGoogleSignUp = useCallback(async () => {
     await signIn.social({
       provider: 'google',

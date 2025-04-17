@@ -3,7 +3,7 @@ export const config = {
   appUrl: 'http://localhost:3001',
   appDescription: 'This is my app description',
   email: {
-    from: 'demirerberker@thesaasgrid.com',
+    from: 'abc@yourdomain.com',
   },
   company: {
     name: 'My Company',
@@ -14,21 +14,5 @@ export const config = {
   },
   social: {
     twitter: '@demirerberker',
-  },
-  dashboard: {
-    mainNavItems: [
-      {
-        title: 'Dashboard',
-        url: '/dashboard',
-        icon: 'home',
-      },
-    ],
-    secondaryNavItems: [
-      {
-        title: 'Settings',
-        url: '/dashboard/settings',
-        icon: 'settings',
-      },
-    ],
   },
 };

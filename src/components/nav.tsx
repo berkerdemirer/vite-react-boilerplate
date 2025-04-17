@@ -2,6 +2,7 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { MenuIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import LocaleSwitcher from '@/components/locale-switch';
+import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -16,6 +17,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { signOut, useSession } from '@/lib/auth';
 
 const navLinks = [
   { to: '/signin', label: 'Sign in' },
@@ -23,6 +25,8 @@ const navLinks = [
 ];
 
 function DesktopNav() {
+  const { data } = useSession();
+
   return (
     <div className="flex w-full items-center justify-between">
       <div className="text-xl font-semibold">logo</div>
@@ -38,6 +42,13 @@ function DesktopNav() {
               </NavigationMenuLink>
             </NavigationMenuItem>
           ))}
+          {data?.user && (
+            <NavigationMenuItem>
+              <Button variant="outline" onClick={() => signOut()}>
+                Sign out
+              </Button>
+            </NavigationMenuItem>
+          )}
           <NavigationMenuItem>
             <LocaleSwitcher />
           </NavigationMenuItem>
