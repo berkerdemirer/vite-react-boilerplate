@@ -15,6 +15,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { forgetPassword } from '@/lib/auth';
+import { ENV } from '@/lib/env';
 
 const schema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -36,7 +37,7 @@ export function ForgetPasswordForm() {
   const onSubmit = useCallback(async (data: FormData) => {
     await forgetPassword({
       email: data.email,
-      redirectTo: '/reset-password',
+      redirectTo: `${ENV.VITE_APP_URL}/reset-password`,
       fetchOptions: {
         onSuccess: () => {
           toast.success('Password reset link sent to your email');

@@ -1,6 +1,8 @@
+import { ENV } from '@/lib/env';
+
 export const config = {
   appName: 'My App',
-  appUrl: 'http://localhost:3001',
+  appUrl: ENV.VITE_APP_URL,
   appDescription: 'This is my app description',
   email: {
     from: 'abc@yourdomain.com',
