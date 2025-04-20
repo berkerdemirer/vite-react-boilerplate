@@ -109,7 +109,7 @@ importers:
         version: 4.1.4
       tw-animate-css:
         specifier: ^1.2.5
-        version: 1.2.5
+        version: 1.2.6
       zod:
         specifier: ^3.24.2
         version: 3.24.3
@@ -2903,8 +2903,8 @@ packages:
   turbo-stream@2.4.0:
     resolution: {integrity: sha512-FHncC10WpBd2eOmGwpmQsWLDoK4cqsA/UT/GqNoaKOQnT8uzhtCbg3EoUDMvqpOSAI0S26mr0rkjzbOO6S3v1g==}
 
-  tw-animate-css@1.2.5:
-    resolution: {integrity: sha512-ABzjfgVo+fDbhRREGL4KQZUqqdPgvc5zVrLyeW9/6mVqvaDepXc7EvedA+pYmMnIOsUAQMwcWzNvom26J2qYvQ==}
+  tw-animate-css@1.2.6:
+    resolution: {integrity: sha512-/DSl24Y1WNdtEWA187h3M5ixwvucje2DH2/Qi8N1plNn0Mb0O1E6F9trXknwzZbtVJCdnogaWLt45xQZOrKtpw==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -5771,7 +5771,7 @@ snapshots:
 
   turbo-stream@2.4.0: {}
 
-  tw-animate-css@1.2.5: {}
+  tw-animate-css@1.2.6: {}
 
   type-check@0.4.0:
     dependencies:
